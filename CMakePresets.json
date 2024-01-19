@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "configurePresets": [
+    {
+      "name": "Base",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/out/build",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install",
+        "CMAKE_C_COMPILER": "F:/PROGRAM FILES/msys64/mingw64/bin/clang.exe",
+        "CMAKE_CXX_COMPILER": "F:/PROGRAM FILES/msys64/mingw64/bin/clang++.exe"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Base-Debug",
+      "displayName": "Debug",
+      "description": "Disable optimizations - include debug information.",
+      "configuration": "Debug",
+      "configurePreset": "Base"
+    },
+    {
+      "name": "Base-Release",
+      "displayName": "Release",
+      "description": "Optimize for speed - exclude debug information.",
+      "configuration": "Release",
+      "configurePreset": "Base"
+    },
+    {
+      "name": "Base-RelWithDebInfo",
+      "displayName": "RelWithDebInfo",
+      "description": "Optimize for speed - include debug information.",
+      "configuration": "RelWithDebInfo",
+      "configurePreset": "Base"
+    },
+    {
+      "name": "Base-MinSizeRel",
+      "displayName": "MinSizeRel",
+      "description": "Optimize for smallest binary size - exclude debug information.",
+      "configuration": "MinSizeRel",
+      "configurePreset": "Base"
+    }
+  ]
+}
